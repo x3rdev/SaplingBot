@@ -1,6 +1,5 @@
 import random
 import time
-import numpy
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -29,7 +28,7 @@ def openSapling():
 
     # with open("user.txt") as f:
     #     data = f.read()
-    data = input("enter your bsd email")
+    data = input("enter your bsd email: ")
 
     x_path = "//*[@id=\"i0116\"]"
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, x_path)))
@@ -42,7 +41,7 @@ def openSapling():
     time.sleep(1)
     # with open("pass.txt") as f:
     #     data = f.read()
-    data = input("enter your bsd password")
+    data = input("enter your bsd password: ")
 
     x_path = "//*[@id=\"i0118\"]"
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, x_path)))
@@ -110,7 +109,7 @@ def answerQuestion(driver):
         try:
             options[x].click()
         except:
-            print("could not click")
+            print("could not2 click")
         time.sleep(0.5)
         if len(driver.find_elements(By.CLASS_NAME, "modal-solution-container")) > 0:
             driver.find_element(By.ID, "solution-modal-next-item").click()
